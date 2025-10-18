@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: EquiPay
+
+  datasource:
+    url: ${PG_JDBC_URL}
+    username: ${PG_USERNAME}
+    password: ${PG_PASSWORD}
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+
+info:
+  application:
+    name: ${spring.application.name}
+    version: '@project.version@'
+    spring-cloud-version: '@spring-cloud.version@'
+    spring-boot-version: '@project.parent.version@'
